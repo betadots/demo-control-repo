@@ -1,0 +1,14 @@
+---
+linux_classes_hash:
+  'time': 'profile::time::linux'
+
+windows_classes_hash:
+  'time': 'winntp'
+
+winntp::servers:
+  - 'time.nist.gov'
+  - 'pool.ntp.org'
+
+profile::time::linux::servers:
+  - 'ntp.ptb.de'
+
