@@ -50,7 +50,7 @@ Vagrant.configure('2') do |config|
   config.hostmanager.manage_host = true
   config.hostmanager.ignore_private_ip = false
   config.hostmanager.include_offline = true
-  config.vm.synced_folder '../', code_dir, mount_options: ['ro']
+  config.vm.synced_folder '.', code_dir, mount_options: ['ro']
 
   # See https://github.com/mitchellh/vagrant/issues/1673
   config.ssh.shell = "bash -c 'BASH_ENV=/etc/profile exec bash'"
