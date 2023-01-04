@@ -3,7 +3,7 @@
 # @param servers optional array of time servers, uses class default if not set
 #
 class profile::time::linux (
-  Optional[Array[String[1]] $server = undef,
+  Optional[Array[String[1]]] $servers = undef,
 ){
   class { 'ntp':
     servers =>  $servers,
