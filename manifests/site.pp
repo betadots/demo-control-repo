@@ -6,6 +6,14 @@ Exec {
   path => $facts['path'],
 }
 
+# Node classification - solution 1 - Array
+# e.g.
+# classes:
+#   - 'class_a'
+#   - 'class_b'
+#
+lookup('classes', { 'value_type' => Array, 'default_value' => [] }).include
+
 # Node classification - solution 2 - Hash
 # e.g.
 # windows_classes_hash:
