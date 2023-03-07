@@ -4,11 +4,11 @@
 #
 class profile::time::linux (
   Optional[Array[String[1]]] $servers = undef,
-){
+) {
   case $facts['os']['name'] {
     'Debian', 'Ubuntu': {
-      class { 'ntp':
-        servers =>  $servers,
+      class { 'ntp':
+        servers => $servers,
       }
     }
     'RedHat', 'CentOS': {
@@ -33,4 +33,8 @@ class profile::time::linux (
         }
       }
     }
+    default: {
+      fail("The OS ${facts['os']['name']} is not supported in class ${name}.")
+    }
+  }
 }
